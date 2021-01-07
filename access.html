@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+ <meta charset="utf-8"/>
+ <!--    ACHTUNG DOCUMENT in UTF8-BOM GESPEICHERT! -->
+ <!--       wichtig für Umlaute! -->
+ <!-- Verwendet webservice hier: see systemctl status bastion -->
+
+ <title>TOOL</title>
+<style>
+  <!-- some CSS -----------------  -->
+  /*  . Klasse */
+  /*  # ID     */
+</style> 
+  <!-- offline jquery in local directory -->
+  <script src="jquery-3.4.1.min.js"></script>
+  <!-- Custom Javascript Code here -->
+  <script src="access.js"></script>
+ 
+</head>
+<body>
+<center>
+ <table border="0">
+     <tr><td  align="center" style="background-color: #EEEFD5;">Fast Ressource Creator<td></tr>
+     <tr>
+      <td>
+        <table border="0">
+         <tr>
+	      <td align="right">Servername</td>
+	      <td><input type="text" id="input_servername"  name="input_servername" style="background-color: #FFEFD5;" size="30"></td>
+	     </tr>
+	     <tr>
+	      <td align="right">IP</td>
+	      <td><input type="text" id="input_IP"  name="input_IP" style="background-color: #FFEFD5;" size="30"></td>
+	     </tr>
+	     <tr>
+	      <td align="right">Existing Categories</td>
+	      <td>
+	         <select name="existing_categories" id="existing_categories">
+			            <option value="998">please wait</option>  
+						<option value="999">all</option>
+ 						<option value="01">one</option>
+ 						<option value="02">two</option>
+ 						<option value="03">three</option>
+ 						<option value="05">cat_id: 5 name: Serveurs_Philips</option>
+					</select>					
+		  </td>
+	     </tr>
+	     <tr>
+	      <td align="right">Connection Type</td>
+	      <td>
+	         <select name="connection_type" id="connection_type">			            
+						<option value="999">RDP</option>
+ 						<option value="01">one</option>
+ 						<option value="02">two</option>
+ 						<option value="03">three</option>
+					</select>					
+		  </td>
+	     </tr>	     
+	     </table>
+	  </td>
+	 </tr>
+	 <tr>
+	   <td align="center">
+	    <input id="button_create_single_ressource" type="submit" name="Knopf" value="Create a Single Ressource">
+	    <div id="singlestat" style="color:blue;"></div>
+	   </td>
+	   
+	 </tr>
+	  <tr><td  align="center" style="background-color: #EEEFD5;">CSV Importer<td></tr>
+	  <tr>
+      <td>
+        <table border="0">
+         <tr>
+	      <td align="right"><div id="label_filename">-- enter a filename -- </div></td>
+	      <td>
+	        <input type="file" id="fileinput"  accept=".txt,.csv" />
+		  </td>
+		 </tr>
+		</table>
+	  </td>
+	  </tr>
+	  <tr>
+	   <td>
+	  <table border="0">
+         <tr>
+           <td align="right">Existing Categories csv</td>
+           <td>
+	         <select name="HH" id="existing_categories_csv">
+			            <option value="998">please wait</option>    
+						<option value="999">RDP</option>
+ 						<option value="01">one</option>
+ 						<option value="02">two</option>
+ 						<option value="03">three</option>
+ 						<option value="05">cat_id: 5 name: Serveurs_Philips</option>
+					</select>					
+		  </td>
+         </tr>
+        </table>
+        </td>
+	  </tr>
+	  <tr>
+	    <table border="0">
+         <tr>
+	      <td align="center">
+	        <input id="button_balancemoncsv" type="submit" name="Knopf" value="BalanceMonCSV">	       
+		  </td>
+		  <td align="center">  <div id="csvstat" style="color:blue;"></div></td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+		  <td align="center"> </td>
+	      <td align="center">
+	         <input id="button_close" type="submit" name="Knopf" value="Close">
+	      </td>
+	      
+	     </tr>
+	 
+	  <!-- DEBUG Buttons to send manually some commands without GUI. do display:true or display:none to show or hide them -->
+	  <tr><td> <input id="button_test"   style="display:none" type="submit" name="Testknopf" value="Test Get"></td></tr>
+	  <tr><td> <input id="button_test2"  style="display:none" type="submit" name="Testknopf" value="Fill - Type"></td></tr>
+	  <tr><td> <input id="button_test3"  style="display:none" type="submit" name="Testknopf" value="Get-Categories GET (production)"></td></tr>
+	  <tr><td> <input id="button_test4"  style="display:none" type="submit" name="Testknopf" value="Send_POST csv (json)"></td></tr>
+	  <tr><td> <input id="button_test4a" style="display:none" type="submit" name="Testknopf" value="Send_POST 1 (json)"></td></tr>
+	  <tr><td> <input id="button_test5"  style="display:none" type="submit" name="Testknopf" value="Get_form_vals"></td></tr>	  
+	  <tr><td> <input id="button_test6"  style="display:none" type="submit" name="Testknopf" value="Login"></td></tr>
+	  <tr><td> <input id="button_test7"  style="display:none" type="submit" name="Testknopf" value="Get-Val-After-Login"></td></tr>
+	  
+	  
+ </table>
+       </tr>
+ 	<!-- Ein Augabe-Label -->
+    <div id="divers_output_label_001" style="display:none" ></div>
+ 
+ </center>
+</body>
+</html>
